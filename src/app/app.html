@@ -1,36 +1,3 @@
 
 
-<div class="container">
-  <h2>Issues in Dev</h2>
-  @if (issueList.length > 0) {
-  <ul>
-    @for (issue of issueList;track issue.id) {
-      <li>
-        <strong>{{ issue.issue }}</strong> - {{ issue.technology }}
-      </li>
-    }
-  </ul>
-} @else {
-  <p>No issues found.</p>
-}
-
-<form (ngSubmit)="createItem()" #issueForm="ngForm">
-    <textarea [(ngModel)]="issue.issue" name="issue" placeholder="Issue"></textarea>
-    <input type="text" [(ngModel)]="issue.technology" name="technology" placeholder="technology">
-    <textarea [(ngModel)]="issue.description" name="description" placeholder="Description"></textarea>
-    <textarea [(ngModel)]="issue.fix" name="fix" placeholder="Fix"></textarea>
-    <button type="submit">Envoyer</button>
-</form>
-  
-</div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
 <router-outlet />

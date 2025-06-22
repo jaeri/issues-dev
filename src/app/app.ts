@@ -3,12 +3,14 @@ import { RouterOutlet } from '@angular/router';
 import { Issue } from './models/issue.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
 import { SupabaseService } from './services/supabase-service';
+
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, CommonModule],
+  imports: [RouterOutlet, FormsModule, CommonModule, ButtonModule, RippleModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
