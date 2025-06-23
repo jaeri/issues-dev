@@ -4,5 +4,7 @@ export interface Issue {
   technology: string;
   issue: string;
   description: string;
-  fix: string;  
+  fix: string; 
+  detection: string;
+  reference: string; 
 }   

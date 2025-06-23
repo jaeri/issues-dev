@@ -1,0 +1,15 @@
+::ng-deep .table-th-action {
+  width: 40px !important;
+  max-width: 40px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+::ng-deep .p-speeddial-mask {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 1 !important;
+}
