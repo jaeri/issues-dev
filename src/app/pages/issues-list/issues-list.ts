@@ -68,11 +68,11 @@ export class IssuesList {
 
     ngOnInit() {
        this.getIssues();    
-       this.speedDialItems(); // Initialize SpeedDial items   
+       //this.speedDialItems(); // Initialize SpeedDial items   
     }
 
    
-
+   // *** functions for CRUD operations ***
    async getIssues() {    
         
         this.getSkeleton();
@@ -85,6 +85,8 @@ export class IssuesList {
             this.issues = data as Issue[];
             this.loading = false;
             this.cdr.detectChanges(); // Ensure the view updates with the new data. recheck
+
+            //this.speedDialItems();
             
         }
 
@@ -109,6 +111,20 @@ export class IssuesList {
         }
     }
 
+    async deleteIssue(id: number) {
+    const { data, error } = await this.supabaseService.deleteIssue('issues', id);
+    if (error) {
+      console.error('Error deleting issue:', error.message);
+    } else {
+      console.log('Issue deleted successfully:', data);
+      this.messageService.add({ severity: 'error', summary: 'Delete', detail: 'Issue deleted successfully' });
+      this.getIssues();
+    }
+  }
+
+
+    // *** end functions for CRUD operations ***
+
      confirmationDialog(){ // Show confirmation dialog after issue creation
         this.confirmationService.confirm({
         message: 'Your issue has been successfully generated!',
@@ -131,8 +147,8 @@ export class IssuesList {
         this.issues = Array.from({ length: 5 }).map((_, i) => `Item #${i}`);
     }
 
-    speedDialItems(){ // Define the items for the SpeedDial component
-        this.items = [
+    speedDialItems(id:number): MenuItem[] { // Define the items for the SpeedDial component for each issue
+        return [
             {
                 icon: 'pi pi-pencil',
                 command: () => {
@@ -143,7 +159,9 @@ export class IssuesList {
             {
                 icon: 'pi pi-trash',
                 command: () => {
-                    this.messageService.add({ severity: 'error', summary: 'Delete', detail: 'Data Deleted' });
+                    console.log('Delete action triggered');
+                    this.deleteIssue(id);
+                    //this.messageService.add({ severity: 'error', summary: 'Delete', detail: 'Data Deleted' });
                 }
             },
             {
