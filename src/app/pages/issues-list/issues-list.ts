@@ -85,9 +85,7 @@ export class IssuesList {
             this.issues = data as Issue[];
             this.loading = false;
             this.cdr.detectChanges(); // Ensure the view updates with the new data. recheck
-
-            //this.speedDialItems();
-            
+                        
         }
 
         this.cols = [

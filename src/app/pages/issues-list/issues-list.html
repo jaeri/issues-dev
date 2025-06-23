@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card p-4">
     <p-table [value]="issues || []" [tableStyle]="{ 'table-layout': 'fixed', width: '100%' }" responsiveLayout="scroll" >
         <ng-template #caption>
                 <div class="text-end pb-4">
@@ -37,7 +37,7 @@
                 </td>
                 <td><p-chip label="{{ issue.technology }}" /></td>
                 <td>{{ issue.issue }}</td>                
-                <td>{{ issue.description }}</td>
+                <td class="">{{ issue.description }}</td>
                 <td>{{ issue.fix }}</td>
             </tr>
         } 

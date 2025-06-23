@@ -1,55 +1,58 @@
-import { Component } from '@angular/core';
+import { Component  } from '@angular/core';
 
 
-import { MenuItem } from 'primeng/api';
+import { MegaMenuItem, MenuItem } from 'primeng/api';
 import { BadgeModule } from 'primeng/badge';
 import { AvatarModule } from 'primeng/avatar';
 import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
 import { Ripple } from 'primeng/ripple';
 import { Menubar } from 'primeng/menubar';
+import { Drawer, DrawerModule } from 'primeng/drawer';
+import { Button, ButtonModule } from 'primeng/button';
+import { StyleClass } from 'primeng/styleclass';
+import { MegaMenu } from 'primeng/megamenu';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [ Menubar, BadgeModule, AvatarModule, InputTextModule, Ripple, CommonModule],
+  imports: [ 
+    Menubar, 
+    BadgeModule, 
+    AvatarModule, 
+    InputTextModule, 
+    Ripple, 
+    CommonModule,
+    DrawerModule, 
+    ButtonModule, 
+    MegaMenu,
+    RouterLink
+    
+  ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })
 export class Navbar {
- items: MenuItem[] | undefined;
+    
+itemsMega: MegaMenuItem[] | undefined;
+
+ 
 
     ngOnInit() {
-        this.items = [
+
+        this.itemsMega = [            
             {
-                label: 'Home',
-                icon: 'pi pi-home',
+                label: 'Issues CRUD',
+                root: true,
+                link:'issues'
             },
             {
-                label: 'Projects',
-                icon: 'pi pi-search',
-                badge: '3',
-                items: [
-                    {
-                        label: 'Core',
-                        icon: 'pi pi-bolt',
-                        shortcut: '⌘+S',
-                    },
-                    {
-                        label: 'Blocks',
-                        icon: 'pi pi-server',
-                        shortcut: '⌘+B',
-                    },
-                    {
-                        separator: true,
-                    },
-                    {
-                        label: 'UI Kit',
-                        icon: 'pi pi-pencil',
-                        shortcut: '⌘+U',
-                    },
-                ],
-            },
+                label: 'About project',
+                root: true,
+                link:'about'
+            }
         ];
+
     }
  
 }

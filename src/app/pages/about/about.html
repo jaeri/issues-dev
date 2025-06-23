@@ -1,0 +1,113 @@
+<div class="grid mt-4 p-4">
+
+  <!-- 🔷 ABOUT APP -->
+  <div class="col-12">
+    <p-card>
+      <ng-template pTemplate="header">
+        <div class="flex align-items-center gap-2 pt-4 pl-4">
+          <i class="pi pi-info-circle text-primary" style="font-size: 1.5rem"></i>
+          <span class="text-xl font-bold ">About This App</span>
+        </div>
+      </ng-template>
+
+      <p>This app is designed for developers to track, document, and solve technical issues in projects.</p>
+      <p>It supports creating, editing, and managing issues in real-time, backed by Supabase and styled with PrimeNG.</p>
+    </p-card>
+  </div>
+
+  <!-- 🚀 TECHNOLOGIES -->
+  <div class="col-12">
+    <p-divider>
+      <b>Technologies Used</b>
+    </p-divider>
+
+    <div class="grid">
+      <div class="col-12 md:col-4">
+        <p-card>
+          <div class="flex align-items-center gap-2">
+            <i class="pi pi-code text-orange-500"></i>
+            <span class="font-bold">Angular 20</span>
+          </div>
+          <p class="mt-2"> Structure based on traditional modules and components. 
+      Utilizes services, routing, and template-driven data binding.</p>
+        </p-card>
+      </div>
+
+      <div class="col-12 md:col-4">
+        <p-card>
+          <div class="flex align-items-center gap-2">
+            <i class="pi pi-desktop text-cyan-600"></i>
+            <span class="font-bold">PrimeNG 19</span>
+          </div>
+          <p class="mt-2">UI components like Card, Dialog, Skeleton, Sidebar, and more.</p>
+        </p-card>
+      </div>
+
+      <div class="col-12 md:col-4">
+        <p-card>
+          <div class="flex align-items-center gap-2">
+            <i class="pi pi-database text-purple-600"></i>
+            <span class="font-bold">Supabase</span>
+          </div>
+          <p class="mt-2">PostgreSQL-based backend API for real-time database interaction.</p>
+        </p-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📦 ARCHITECTURE -->
+  <div class="col-12">
+    <p-divider>
+      <b>App Architecture</b>
+    </p-divider>
+
+    <div class="grid">
+      <div class="col-6 md:col-3">
+        <p-card>
+          <span class="text-primary font-bold">Pages</span>
+          <p class="mt-2">View-based components such as <code>List</code>, <code>Add</code>, <code>Delete</code>, <code>About</code>.</p>
+        </p-card>
+      </div>
+      <div class="col-6 md:col-3">
+        <p-card>
+          <span class="text-primary font-bold">Components</span>
+          <p class="mt-2">Reusable UI: <code>Navbar</code>, <code>Form</code>, <code>Layout</code>.</p>
+        </p-card>
+      </div>
+      <div class="col-6 md:col-3">
+        <p-card>
+          <span class="text-primary font-bold">Services</span>
+          <p class="mt-2">Supabase API logic with async support.</p>
+        </p-card>
+      </div>
+      <div class="col-6 md:col-3">
+        <p-card>
+          <span class="text-primary font-bold">Models</span>
+          <p class="mt-2">Interface-based types using TypeScript (<code>Issue</code> model).</p>
+        </p-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🧠 UI CONCEPTS -->
+  <div class="col-12">
+    <p-divider>
+      <b>UI Concepts Introduced</b>
+    </p-divider>
+
+    <p-panel toggleable>
+    <div class="flex flex-wrap gap-3">
+      <p-tag severity="info" value="Skeleton Loader"></p-tag>
+      <p-tag severity="success" value="Dialog Popup"></p-tag>
+      <p-tag severity="warning" value="Sidebar Navigation"></p-tag>
+      <p-tag severity="info" value="PrimeNG Cards & Panels"></p-tag>
+      <p-tag severity="help" value="Menu & RouterLink Navigation"></p-tag>
+      <p-tag severity="secondary" value="Modular Routing (AppConfig)"></p-tag>
+      <p-tag severity="contrast" value="Supabase API Integration"></p-tag>
+      <p-tag severity="primary" value="Service-based API Logic"></p-tag>
+      <p-tag severity="info" value="PrimeFlex Grid Layout"></p-tag>
+    </div>
+  </p-panel>
+  </div>
+
+</div>

@@ -1,10 +1,17 @@
 <div class="card">
-    <p-menubar [model]="items">
+    <p-megamenu [model]="itemsMega " [style]="{ 'border-radius': '3rem', display: 'flex' }" styleClass="p-4 bg-surface-0 dark:bg-surface-900">
         <ng-template #start>
-            <svg width="33" height="35" viewBox="0 0 33 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15.1934 0V0V0L0.0391235 5.38288L2.35052 25.3417L15.1934 32.427V32.427V32.427L28.0364 25.3417L30.3478 5.38288L15.1934 0Z" fill="var(--primary-color)" />
-                <mask id="mask0_1_36" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="31" height="33">
-                    <path d="M15.1934 0V0V0L0.0391235 5.38288L2.35052 25.3417L15.1934 32.427V32.427V32.427L28.0364 25.3417L30.3478 5.38288L15.1934 0Z" fill="var(--primary-color-text)" />
+           
+            <svg width="26" height="28" viewBox="0 0 31 33" severity="contrast" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M15.1934 0V0V0L0.0391235 5.38288L2.35052 25.3417L15.1934 32.427V32.427V32.427L28.0364 25.3417L30.3478 5.38288L15.1934 0Z"
+                    fill="#000000"
+                />
+                <mask id="mask0_1_52" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="31" height="33">
+                    <path
+                        d="M15.1934 0V0V0L0.0391235 5.38288L2.35052 25.3417L15.1934 32.427V32.427V32.427L28.0364 25.3417L30.3478 5.38288L15.1934 0Z"
+                        fill="var(--ground-background)"
+                    />
                 </mask>
                 <g mask="url(#mask0_1_52)">
                     <path
@@ -53,21 +60,19 @@
                     fill="var(--ground-background)"
                 />
             </svg>
+             <small class="font-black font-semibold text-xl uppercase tracking-tight ml-2">Issue in dev</small> 
         </ng-template>
-        <ng-template #item let-item let-root="root">
-            <a pRipple class="flex items-center p-menubar-item-link">
-                <span>{{ item.label }}</span>
-                <p-badge *ngIf="item.badge" [ngClass]="{ 'ml-auto': !root, 'ml-2': root }" [value]="item.badge" />
-                <span *ngIf="item.shortcut" class="ml-auto border border-surface rounded bg-emphasis text-muted-color text-xs p-1">{{ item.shortcut }}</span>
-                <i *ngIf="item.items" [ngClass]="['ml-auto pi', root ? 'pi-angle-down' : 'pi-angle-right']"></i>
+        <ng-template #item let-item>
+            <a *ngIf="item.root" [routerLink]="['/', item.link]" pRipple  class="flex items-center cursor-pointer px-4 py-2 overflow-hidden relative  text-lg uppercase no-underline visited:text-black" style="border-radius: 2rem">
+                <i [ngClass]="item.icon"></i>
+                <span class="ml-2">{{ item.label }}</span>
             </a>
+            
+            
         </ng-template>
         <ng-template #end>
-            <div class="flex items-center gap-2">
-                <input type="text" pInputText placeholder="Search" class="w-36" />
-                <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
-            </div>
+            <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
         </ng-template>
-    </p-menubar>
+    </p-megamenu>
 </div>
 
