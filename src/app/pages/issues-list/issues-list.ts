@@ -16,7 +16,6 @@ import { ConfirmationService } from 'primeng/api';
 
 import { MessageService, MenuItem } from 'primeng/api';
 import { Toast, ToastModule } from 'primeng/toast';
-import { Ripple } from 'primeng/ripple';
 import { Chip } from 'primeng/chip';
 import { SpeedDial } from 'primeng/speeddial';
 
@@ -40,7 +39,6 @@ interface Column {
     CommonModule,
     ConfirmDialogModule,
     Toast,
-    Ripple,
     Chip,
     SpeedDial,
     ToastModule  
@@ -120,6 +118,15 @@ export class IssuesList {
     }
   }
 
+  async getIssueById(id: number){
+    const {data, error} = await this.supabaseService.getIssueById('issues', id);
+    if (error) {
+        this.showToast('danger', 'error on listing issue');
+    }else{
+        this.issue = data as Partial<Issue>;
+    }
+  }
+
 
     // *** end functions for CRUD operations ***
 
@@ -164,8 +171,7 @@ export class IssuesList {
             },
             {
                 icon: 'pi pi-external-link',
-                target:'_blank',
-                url: 'http://angular.io'
+                command: () => this.getIssueById(id) // display issue                     
             }
         ];
     }

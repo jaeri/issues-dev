@@ -7,7 +7,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { InputTextModule } from 'primeng/inputtext';
 import { CommonModule } from '@angular/common';
 import { Ripple } from 'primeng/ripple';
-import { Menubar } from 'primeng/menubar';
+
 import { Drawer, DrawerModule } from 'primeng/drawer';
 import { Button, ButtonModule } from 'primeng/button';
 import { StyleClass } from 'primeng/styleclass';
@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   imports: [ 
-    Menubar, 
+    
     BadgeModule, 
     AvatarModule, 
     InputTextModule, 

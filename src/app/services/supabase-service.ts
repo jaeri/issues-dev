@@ -18,6 +18,10 @@ export class SupabaseService {
     return await this.getSupabaseClient().from(table).select('*');
   }
 
+  async getIssueById(table: string, id:number){
+    return await this.getSupabaseClient().from(table).select('*').eq('id', id);
+  }
+
   async createIssue(table: string, issue: Partial<Issue>) {
     return await this.getSupabaseClient().from(table).insert(issue);
   }
